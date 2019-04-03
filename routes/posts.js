@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express'),
+      router = express.Router();
 
 /* GET post index /posts */
 //even thought there is only a "/" it goes to the post route

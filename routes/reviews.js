@@ -6,7 +6,7 @@ router.get('/', (req, res, next) => {
   res.send("INDEX /posts/:id/reviews");
 });
 
-// THIS ROUTE IS BEING ELEMINATED DUE TO ALLOWING THE USER TO POST A REVIEW ON THE FROM THEY ARE ON. 
+// THIS ROUTE IS BEING ELIMINATED DUE TO ALLOWING THE USER TO POST A REVIEW ON THE FROM THEY ARE ON. 
 // /* GET review new posts/:id/reviews/new */
 // router.get('/new', (req, res, next) => {
 //   res.send("NEW /review/new");
