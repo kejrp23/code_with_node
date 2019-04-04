@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+//section 5 video 18) alittle confusing what is happening here. 
+var { postRegister } = require("../controllers/index");
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -12,9 +14,7 @@ router.get('/register', (req, res, next) => {
 });
 
 /* post register page. */
-router.post('/register', (req, res, next) => {
-  res.send("post register");
-});
+router.post('/register', postRegister);
 
 
 /* GET login page. */
