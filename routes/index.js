@@ -1,23 +1,22 @@
 var express = require('express');
 var router = express.Router();
 //section 5 video 18) alittle confusing what is happening here. 
-var { postRegister } = require("../controllers/index");
+const   {postRegister} = require("../controllers/index");
+const   {errorHandler} = require("../middleware/index");
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Surf Shop - Home' });
-});
-
+}); 
 /* GET register page. */
 router.get('/register', (req, res, next) => {
   res.send("Get /register");
 });
 
 /* post register page. */
-router.post('/register', postRegister);
+router.post('/register', errorHandler(postRegister));
 
-
-/* GET login page. */
+ 
 router.get('/login', (req, res, next) => {
   res.send("Get /login");
 });
