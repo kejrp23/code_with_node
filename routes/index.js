@@ -1,8 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const passport = require("passport");
 //section 5 video 18) alittle confusing what is happening here. 
-const   {postRegister} = require("../controllers/index");
-const   {errorHandler} = require("../middleware/index");
+const   {postRegister} = require("../controllers");
+const   {errorHandler} = require("../middleware");
 
 /* GET home page. */
 router.get('/', (req, res, next) => {
@@ -22,9 +23,17 @@ router.get('/login', (req, res, next) => {
 });
 
 /* POST login page. */
-router.post('/login', (req, res, next) => {
-  res.send("Post /login");
+router.post("/login", passport.authenticate('local', { 
+  successRedirect: '/',
+  failureRedirect: '/login' 
+}));
+
+/* POST LOGOUT */
+router.get('/logout', (req, res, next) => {
+  req.logout();
+  res.redirect('/');
 });
+
 
 /* GET profile page. */
 router.get('/profile', (req, res, next) => {

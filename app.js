@@ -46,9 +46,11 @@ app.use(session({
 
 //Config Passport and sessions
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 // CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
 passport.use(User.createStrategy());
-
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
