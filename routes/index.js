@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const passport = require("passport");
 //section 5 video 18) alittle confusing what is happening here. 
 const   {postRegister, postLogin, getLogout} = require("../controllers");
 const   {errorHandler} = require("../middleware");
