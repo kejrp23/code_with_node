@@ -1,17 +1,17 @@
 const express = require('express'),
-      router = express.Router();
+      router = express.Router(),
+      { errorHandler } = require("../middleware/index"),
+      { getPosts,newPost } = require("../controllers/posts");
+     
 
 /* GET post index /posts */
 //even thought there is only a "/" it goes to the post route
-router.get('/', (req, res, next) => {
-  res.send("INDEX /posts");
-});
+router.get('/', errorHandler(getPosts));
+
 
 
 /* GET posts new /posts/new */
-router.get('/new', (req, res, next) => {
-  res.send("NEW /posts/new");
-});
+router.get('/new', errorHandler(newPost));
 
 /* POST posts create /posts */
 router.post('/', (req, res, next) => {

@@ -8,21 +8,19 @@ const PostSchema = new Schema ({
     price : String,
     description: String,
     images: [ String ],
+    location: String,
     lat: Number,
     lng: Number,
     author: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
-    
     reveiws: [
         {
             type: Schema.Types.ObjectId,
             ref: "Review"
     }
     ]
-   
-    
 });
 
 
